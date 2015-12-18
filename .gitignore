@@ -1,0 +1,71 @@
+## William Murphy
+## Vector Stack Function 
+## This represents a Stack class in R
+#-----------------------------------------------------------------
+## Create Stack Function ##
+#-------------------------#
+create_stack <- function()
+{           
+            bool1 = TRUE
+            bool2 = TRUE
+            while(bool1)
+            {
+              n <- readline(prompt="Enter an integer to set array size ==> ")    # set the size of the stack
+               size <- as.integer(n) 
+               if(is.na(size))
+               {
+                 print("ERROR: VALUE CANNOT BE CONVERTED INTO AN INTEGER")
+               }
+               else(is.integer(size))
+               {
+                ARRAY <- c(NA)     # creates a empty vector array
+                length(ARRAY) <- size
+                bool1 <- FALSE
+              }
+            }
+        return(ARRAY)
+}
+#-----------------------------------------------------------------
+## Push Function ##
+#-----------------#
+stack_push <- function(array)     # input should be a stack
+{
+  bool1 <- TRUE
+  bool2 <- TRUE
+  i <- 1
+  n <- length(array)
+  while(bool1)
+  {
+    while(bool2)
+    {
+      array[i] <- readline(prompt= "enter an integer value to push into the stack ==>")
+      bool1 <- readline(prompt= "Continue? press 'y' for yes or 'n' for no ==>")
+      if(bool1 == 'y')
+      {
+        i = i+1
+      }
+      if(bool1 == 'n')
+      {
+        bool1 <- FALSE
+        bool2 <- FALSE
+      }
+      else if(i > n)
+      {
+        bool1 <- FALSE
+        bool2 <- FALSE
+      }
+    }
+  }
+  return(as.integer(array))
+}
+#-----------------------------------------------------------------
+## Pop Function ##
+#----------------#
+stack_pop <- function(array)
+{
+  n <- length(array)
+  
+  return(array[n])
+  length(array) <- length(array) -1
+}
+#-----------------------------------------------------------------
